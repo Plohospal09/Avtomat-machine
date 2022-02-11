@@ -1,0 +1,51 @@
+﻿<Page x:Class="VendingMachines.pages.Coins"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VendingMachines"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Coins">
+
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="1 руб." HorizontalAlignment="Center" Height="31"/>
+            <TextBox TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" Height="19" x:Name="txt1rubles"/>
+            <CheckBox Height="20" Margin="0,5,0,0" HorizontalAlignment="Center" x:Name="ch1rubles"/>
+            <Label Content="1" HorizontalAlignment="Center" Height="31" Visibility="Hidden" x:Name="lbl1rubles"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="2 руб." HorizontalAlignment="Center" Height="31"/>
+            <TextBox TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" Height="19" TextChanged="TextBox_TextChanged" x:Name="txt2rubles"/>
+            <CheckBox Height="20" Margin="0,5,0,0" HorizontalAlignment="Center" x:Name="ch2rubles"/>
+            <Label Content="2" HorizontalAlignment="Center" Height="31" Visibility="Hidden" x:Name="lbl2rubles"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Label Content="5 руб." HorizontalAlignment="Center" Height="31"/>
+            <TextBox TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" Height="19" x:Name="txt5rubles"/>
+            <CheckBox Height="20" Margin="0,5,0,0" HorizontalAlignment="Center" x:Name="ch5rubles"/>
+            <Label Content="5" HorizontalAlignment="Center" Height="31" Visibility="Hidden" x:Name="lbl5rubles"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <Label Content="10 руб." HorizontalAlignment="Center" Height="31"/>
+            <TextBox TextWrapping="Wrap" Width="120" HorizontalAlignment="Center" Height="19" x:Name="txt10rubles"/>
+            <CheckBox Height="20" Margin="0,5,0,0" HorizontalAlignment="Center" x:Name="ch10rubles"/>
+            <Label Content="10" HorizontalAlignment="Center" Height="31" Visibility="Hidden" x:Name="lbl10rubles"/>
+        </StackPanel>
+        <Button Content="Сохранить" x:Name="btnBlockCoins" Grid.Column="1" HorizontalAlignment="Center" Margin="144,194,143,0" VerticalAlignment="Top" Width="113" Grid.ColumnSpan="2" Grid.Row="1" Click="btnBlockCoins_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bd1f0caef5004bfd99bdb4a3bbdc9b2b" Name="Diagram1">
+        <EntityTypeShape EntityType="VendingMachinesModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.Coins" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.Drinks" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.Report" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.VendingMachineCoins" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.VendingMachineDrinks" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VendingMachinesModel.VendingMachines" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="VendingMachinesModel.FK_dbo_VendingMachineCoins_dbo_Coins_CoinsId" ManuallyRouted="false" />
+        <AssociationConnector Association="VendingMachinesModel.FK_dbo_VendingMachineDrinks_dbo_Drinks_DrinksId" ManuallyRouted="false" />
+        <AssociationConnector Association="VendingMachinesModel.FK_Report_Drinks" ManuallyRouted="false" />
+        <AssociationConnector Association="VendingMachinesModel.FK_dbo_VendingMachineCoins_dbo_VendingMachines_VendingMachineId" ManuallyRouted="false" />
+        <AssociationConnector Association="VendingMachinesModel.FK_dbo_VendingMachineDrinks_dbo_VendingMachines_VendingMachineId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

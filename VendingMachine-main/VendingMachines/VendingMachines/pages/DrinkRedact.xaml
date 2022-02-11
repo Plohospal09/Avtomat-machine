@@ -1,0 +1,38 @@
+﻿<Page x:Class="VendingMachines.pages.DrinkRedact"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VendingMachines.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="124"
+      Title="DrinkRedact">
+
+    <Grid Background="#FFC6D4E0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="22*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2">
+            <Label Content="Название" Width="auto" RenderTransformOrigin="0.5,0.5" BorderThickness="0,50,0,0" Height="77" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="lblName">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.358"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Image x:Name="Drinkpic" Height="106" Width="100" RenderTransformOrigin="1,1"/>
+            <TextBox x:Name="pathpic" TextWrapping="Wrap" Width="120"/>
+            <Button Content="Выберите файл" Margin="0,5,0,0" Width="103" Click="PicLoad"/>
+            <Label Content="Цена" Width="125"/>
+            <TextBox TextWrapping="Wrap" Width="120" x:Name="txtCost"/>
+            <Label Content="Количество" Width="125"/>
+            <TextBox TextWrapping="Wrap" Width="120" x:Name="txtCount"/>
+            <Button Content="Сохранить" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Width="71" Height="20" Click="Button_Click" Margin="0,10,0,0" x:Name="btnSave"/>
+            <Button Content="Удалить" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="53" Height="20" Margin="0,10,0,0" x:Name="btnDelete" Click="btnDelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="VendingMachines.MainWindow"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:local="clr-namespace:VendingMachines"
+mc:Ignorable="d"
+Title="MainWindow" Height="550" Width="900">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
+                <StackPanel Margin="5">
+                    <Image x:Name="DrinkImage" Source="{Binding Image}" Width="100" Height="100"/>
+                    <TextBlock x:Name="DrinkName" Text="{Binding Name}" TextAlignment="Center"/>
+                    <TextBlock x:Name="DrinkCost" Text="{Binding Cost}" TextAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Background="#FFC9BDBD" Margin="0,0,-8,-1">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="389*"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="104"/>
+            <ColumnDefinition Width="557*"/>
+            <ColumnDefinition Width="247"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="NomOne" Content="1" HorizontalAlignment="Left" Margin="43,44,0,0" VerticalAlignment="Top" Grid.Column="2" Height="62" Width="70" Grid.Row="1" Click="btn1" FontSize="36" Background="#FFC6D4E0"/>
+        <Button x:Name="NomTwo" Content="2" HorizontalAlignment="Left" Margin="134,44,0,0" VerticalAlignment="Top" Grid.Column="2" Height="62" Width="72" Grid.Row="1" Click="btn2" FontSize="36" Background="#FFC6D4E0"/>
+        <Button x:Name="NomFive" Content="5" HorizontalAlignment="Left" Margin="43,121,0,0" VerticalAlignment="Top" Grid.Column="2" Height="62" Width="70" Grid.Row="1" Click="btn5" FontSize="36" Background="#FFC6D4E0"/>
+        <Button x:Name="NomTen" Content="10" HorizontalAlignment="Left" Margin="134,122,0,0" VerticalAlignment="Top" Grid.Column="2" Height="62" Width="72" Grid.Row="1" Click="btn10" FontSize="36" Background="#FFC6D4E0"/>
+        <Button x:Name="CashOut" Content="Cдача" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="50" Width="131" Background="#FFC6D4E0" Click="CashOut_Click"/>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2" Margin="43,10,41,10">
+            <Border.Style>
+                <Style/>
+            </Border.Style>
+            <Label x:Name="CoinCount" Content="0 руб" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Background="#FF9C4242"/>
+        </Border>
+        <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="132" Margin="0,220,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="208"/>
+        <Label Content="1. Внесите деньги" Grid.Column="2" HorizontalAlignment="Left" Margin="23,230,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="34" Width="166"/>
+        <Label Content="2. Выберите напиток" Grid.Column="2" HorizontalAlignment="Left" Margin="23,269,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="34" Width="194"/>
+        <Label Content="3. Получите сдачу" Grid.Column="2" HorizontalAlignment="Left" Margin="23,308,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Height="34" Width="170"/>
+        <Button Content="Админ" HorizontalAlignment="Center" Margin="0,40,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="84" Click="Button_Click_4" Background="#FFC6D4E0"/>
+        <Frame x:Name="FrameAdmin" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="2"/>
+
+        <ListView ItemTemplate="{StaticResource listTemplate}" Grid.Column="1" Grid.Row="1" x:Name="lstDrink" FontSize="14" FontWeight="Bold" SelectionChanged="lstDrink_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+
+    </Grid>
+</Window>
